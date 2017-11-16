@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
+import { CameraPreview } from '@ionic-native/camera-preview';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -36,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     Camera,
+    CameraPreview,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

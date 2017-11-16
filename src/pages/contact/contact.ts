@@ -8,13 +8,15 @@ import { Camera } from '@ionic-native/camera';
 })
 export class ContactPage {
   public image: string;
-  constructor(public navCtrl: NavController, public cameraModule: Camera, private alertCtrl: AlertController) {
-
-  }
+  constructor(public navCtrl: NavController, public cameraModule: Camera, private alertCtrl: AlertController) { }
 
   public async camera() {
     try {
-      const pic = await this.cameraModule.getPicture();
+      const pic = await this.cameraModule.getPicture({
+        targetWidth: 500,
+        targetHeight: 500,
+        destinationType: 0
+      });
       const base64Image = 'data:image/jpeg;base64,' + pic;
       this.image = base64Image;
     } catch (e) {
@@ -23,7 +25,7 @@ export class ContactPage {
         subTitle: e.toString(),
         buttons: ['Damn']
       });
-      alert.present();      
+      alert.present();
     }
   }
 }

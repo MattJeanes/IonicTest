@@ -15,5 +15,6 @@
     </ion-item>
   </ion-list>
   <button ion-button (click)="camera()">Take picture</button>
-  <img [src]="image" />
+  <br />
+  <img *ngIf="image" [src]="image" />
 </ion-content>
